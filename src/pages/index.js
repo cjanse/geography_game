@@ -10,9 +10,13 @@ export default function Home() {
     setPlaying(true);
   }
 
+  const gameOver = () => {
+    setPlaying(false);
+  }
+
   return (
     <div>
-      {playing ? (<Game/>)
+      {playing ? (<Game onGameOver={gameOver}/>)
       :(
         <MainMenu onStart={start}/>
       )}
