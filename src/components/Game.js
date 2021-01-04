@@ -6,7 +6,6 @@ import Questions from "./Questions"
 const Game = (props) => {
 
 const [response, setResponse] = React.useState("");
-
 const [countryData, setCountryData] = React.useState([{name:'Please Wait'}]);
 
 const getCountryData = () => {axios.get("../api/country").then((response) => 
@@ -17,10 +16,10 @@ return(
     <div>
     <div>{(countryData[0].name == 'Please Wait') ? (<Waiting/>) 
     : (
-      <Questions onGetCountryData={getCountryData} onCountryData={countryData} ononGameOver={props.onGameOver}/>
+      <Questions onGetCountryData={getCountryData} onCountryData={countryData} highscore={props.highscore} ononGameOver={props.onGameOver}/>
     )}</div>
     </div>
-    )
+)
 }
 
 export default Game;

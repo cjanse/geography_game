@@ -4,8 +4,8 @@ const options = {
   method: 'GET',
   url: 'https://restcountries-v1.p.rapidapi.com/all',
   headers: {
-    'x-rapidapi-key': 'c9f49c1242msh966ccad3bc13254p17d0ebjsn568038a2f812',
-    'x-rapidapi-host': 'restcountries-v1.p.rapidapi.com'
+    'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+    'x-rapidapi-host': process.env.RAPIDAPI_HOST
   }
 };
 

@@ -10,15 +10,22 @@ export default function Home() {
     setPlaying(true);
   }
 
-  const gameOver = () => {
-    setPlaying(false);
+ 
+
+  const [highscore, setHighscore] = React.useState(0); 
+
+ const gameover = (score) => {
+  if (score > highscore) {
+    setHighscore(score);
   }
+  setPlaying(false);
+};
 
   return (
     <div>
-      {playing ? (<Game onGameOver={gameOver}/>)
+      {playing ? (<Game onGameOver={gameover} highscore={highscore}/>)
       :(
-        <MainMenu onStart={start}/>
+        <MainMenu onStart={start} highscore={highscore}/>
       )}
 
     </div>
